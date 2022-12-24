@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require('cors');
 
 const app = express();
 const port = 3030;
@@ -6,6 +7,7 @@ const port = 3030;
 // Middlewares
 app.use(express.json()); // for parsing application/json
 app.use(express.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
+app.use(cors()); // Enable CORS for all routes
 
 // Routes
 const routes = require('./routes');

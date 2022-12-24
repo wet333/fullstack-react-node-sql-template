@@ -1,13 +1,89 @@
-body {
+/* Reset styles */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Basic styles */
+html {
+  font-family: sans-serif; /* default font for the HTML document */
+  line-height: 1.15; /* default line height */
+  -webkit-text-size-adjust: 100%; /* enable font scaling for mobile devices */
+}
+
+body {
+  margin: 0; /* reset default margin */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: sans-serif; /* default font for headings */
+  font-weight: normal; /* default font weight for headings */
+}
+
+p {
+  margin: 1em 0; /* add some space between paragraphs */
+}
+
+a {
+  color: #0366d6; /* default link color */
+  text-decoration: none; /* remove underline from links */
+}
+
+a:hover,
+a:focus {
+  color: #005580; /* change link color on hover */
+  text-decoration: underline; /* add underline to links on hover */
+}
+
+img {
+  max-width: 100%; /* scale images to fit the container */
+  height: auto; /* maintain aspect ratio */
+  border: 0; /* remove border from images */
+  vertical-align: middle; /* align images with text */
+}
+
+/* Layout styles */
+.container {
+  max-width: 1200px; /* set a maximum width for the container */
+  margin: 0 auto; /* center the container */
+  padding: 0 1em; /* add some padding to the container */
+}
+
+.row {
+  display: flex; /* use flexbox layout */
+  flex-wrap: wrap; /* allow elements to wrap to the next line */
+  margin: -0.5em -1em; /* add negative margins to compensate for the padding of the child elements */
+}
+
+.col {
+  flex: 0 0 auto; /* use flexbox layout */
+  width: 100%; /* fill the available width */
+  padding: 0.5em 1em; /* add some padding to the columns */
+}
+
+@media (min-width: 768px) {
+  .col {    width: 50%; /* divide the container into 2 columns on medium screens and above */
+  }
+}
+
+@media (min-width: 992px) {
+  .col {
+    width: 33.3333%; /* divide the container into 3 columns on large screens and above */
+  }
 }

@@ -4,11 +4,14 @@ const router = express.Router();
 // Endpoint: /api/greetings
 
 router.get('/', (req, res) => {
-    res.send("Hi visitor!")
-});
+    const currentDate = new Date();
+    const currentYear = currentDate.getFullYear();
+    const currentMonth = currentDate.getMonth() + 1; // month is 0-based
+    const currentDay = currentDate.getDate();
 
-router.post('/', (req, res) => {
-    console.log("Greeting POST");
+    res.json({
+        data: "Hello visitor! , today is " + `${currentMonth}/${currentDay}/${currentYear}`
+    })
 });
 
 module.exports = router;
