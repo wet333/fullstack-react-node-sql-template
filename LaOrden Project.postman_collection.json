@@ -7,7 +7,7 @@
 	},
 	"item": [
 		{
-			"name": "Agregar mensaje a la tabla \"data\"",
+			"name": "Leer todos los mensajes de la tabla \"data\"",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -19,7 +19,37 @@
 					"urlencoded": [
 						{
 							"key": "message",
-							"value": "mensaje de ejemplo y prueba de que la base de datos esta conectada y funcionando!",
+							"value": "anto te amo",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3030/api/messages",
+					"host": [
+						"localhost"
+					],
+					"port": "3030",
+					"path": [
+						"api",
+						"messages"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Agregar mensaje a la tabla \"data\"",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "message",
+							"value": "mensaje de prueba para agregar",
 							"type": "text"
 						}
 					]
