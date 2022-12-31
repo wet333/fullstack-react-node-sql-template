@@ -1,0 +1,42 @@
+{
+	"info": {
+		"_postman_id": "085fff0e-4430-46ac-ad7f-b3e0797dea44",
+		"name": "LaOrden Project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21117687"
+	},
+	"item": [
+		{
+			"name": "Agregar mensaje a la tabla \"data\"",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "message",
+							"value": "mensaje de ejemplo y prueba de que la base de datos esta conectada y funcionando!",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3030/api/messages",
+					"host": [
+						"localhost"
+					],
+					"port": "3030",
+					"path": [
+						"api",
+						"messages"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
