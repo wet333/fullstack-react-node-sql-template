@@ -7,10 +7,10 @@ const dbClient = require("../../config/database");
 router.get('/', (req, res) => {
     
     dbClient.query(
-        `SELECT * FROM data;`
+        `SELECT * FROM messages;`
         , (err, result) => {
             if (err) {
-                console.error('Error inserting rows:', err.stack);
+                res.json({ error: err });
             } else {
                 res.json(result.rows);
             }
@@ -23,7 +23,7 @@ router.post('/', (req, res) => {
     const message = req.body.message;
     
     dbClient.query(
-        `INSERT INTO data (message) VALUES ('${message}')`
+        `INSERT INTO messages (message) VALUES ('${message}')`
         , (err, result) => {
             if (err) {
                 console.error('Error inserting a new message: ', err.stack);

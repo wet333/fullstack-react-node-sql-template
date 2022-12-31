@@ -5,7 +5,7 @@
 - Para esto solo es necesario correr "docker-compose -env-file ./../.env up" en este mismo directorio.
 
  ```bash
-    docker-compose -env-file ./../.env up
+    docker-compose up
 ```
 
 - El flag -env-file lee el archivo .env y lo usa para iniciar los contenedores.

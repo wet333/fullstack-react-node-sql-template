@@ -1,8 +1,9 @@
-// database.js
 const { Client } = require('pg');
+const path = require('path');
 require('dotenv').config({
-    path: "./../../.env"
+    path: path.resolve(__dirname, "../../postgre-docker/.env"),
 });
+const initDB = require("./databaseStructureCreation");
 
 const dbClient = new Client({
     user: process.env.POSTGRES_USER,
@@ -13,11 +14,13 @@ const dbClient = new Client({
 });
 
 dbClient.connect((err) => {
-  if (err) {
-    console.error('Error connecting to the database:', err.stack);
-  } else {
-    console.log('Connected to the database.');
-  }
+    if (err) {
+        console.error('Error connecting to the database:', err.stack);
+    } else {
+        console.log('Connected to the database.');
+        console.info("Starting database structure creation...");
+        initDB(dbClient);
+    }
 });
 
 module.exports = dbClient;
