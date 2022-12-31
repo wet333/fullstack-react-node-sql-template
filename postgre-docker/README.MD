@@ -3,6 +3,11 @@
 ## Paso 1: Iniciar los container
 
 - Para esto solo es necesario correr "docker-compose -env-file ./../.env up" en este mismo directorio.
+
+ ```bash
+    docker-compose -env-file ./../.env up
+```
+
 - El flag -env-file lee el archivo .env y lo usa para iniciar los contenedores.
 
 ## Paso 2: Ingresar a la plataforma PgAdmin
