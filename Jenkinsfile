@@ -1,23 +1,20 @@
 pipeline {
   agent any
   stages {
-    stage('Checkout Code') {
-      steps {
-        git(url: 'https://github.com/wet333/fullstack-react-node-sql-template', branch: 'master')
+      stage('Checkout Code') {
+          steps {
+              git(url: 'https://github.com/wet333/fullstack-react-node-sql-template', branch: 'awet-docker-compose-backend')
+          }
       }
-    }
 
-    stage('Log') {
-      steps {
-        sh 'ls'
-      }
+    stage('Execute Docker Compose') {
+        steps {
+            dir('postgre-docker') {
+                sh 'docker-compose down'
+                sh 'docker-compose up -d'
+            }
+        }
     }
-
-    stage('Compose Up') {
-      steps {
-        sh 'cd ./postgre-docker && docker-compose down && docker-compose up'
-      }
-    }
-
+    
   }
 }
