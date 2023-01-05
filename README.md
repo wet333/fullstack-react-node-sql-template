@@ -18,3 +18,5 @@ To start the back-end got to the "back-end" folder and run:
 
 ### Front-end
 The frontend is an app created with create-react-app
+
+ahajshdkajshdka
