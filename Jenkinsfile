@@ -7,9 +7,15 @@ pipeline {
       }
     }
 
-    stage('Send Email') {
+    stage('Log') {
       steps {
-        emailext(subject: 'Fullstack - Node + React', body: 'The pipeline was executed successfully', to: 'wet.4gustin@gmail.com')
+        sh 'ls'
+      }
+    }
+
+    stage('Compose Up') {
+      steps {
+        sh 'cd ./postgre-docker && docker-compose down && docker-compose up'
       }
     }
 
