@@ -1,22 +1,32 @@
-# React-Express Full-stack app tempalte
-A brief description of the project, including its purpose and features.
+# React-Express Full-stack app template
+This full-stack application template utilizes the power of React for the user interface, Express for server-side routing and logic, and Postgres for data storage and management. With these three technologies working together, this template offers a comprehensive foundation for developing advanced, feature-rich web applications that meet the needs of today's users.
 
-### Tech Stack
-- React.js
-- Express.js
+## Prerequisites
+- Git
+- Node.js & npm
+- Docker & docker-compose
 
-## Installation
-Instructions for setting up the project locally, including any necessary dependencies or prerequisites.
+## How to Run the Project
+1. Clone the repository
 
-## Usage
-The back-end and the front-end works idependently of eachother.
+```
+    git clone https://github.com/your-username/react-express-template.git
+```
 
-### Back-end
-To start the back-end got to the "back-end" folder and run:
+2. Run docker-compose to build all the project infrastructure
 
-    npm run serve
+```
+    cd postgre-docker
+    docker-compose up -d
+```
 
-### Front-end
-The frontend is an app created with create-react-app
+3. Then you will have
 
-ahajshdkajshdka
+- Node.js backend
+- React.js frontend
+- Postgres Database
+- PgAdmin database administrator
+
+4. Code!!!
+
+Now you just need to satrt coding your application
