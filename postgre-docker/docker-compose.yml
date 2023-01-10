@@ -29,7 +29,7 @@ services:
     working_dir: /app
     ports:
       - ${FRONTEND_LOCAL_PORT}:3000
-    command: npm start
+    command: npm run docker-start-dev
     depends_on:
       - node
 
