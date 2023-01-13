@@ -1,6 +1,6 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
-import { localDevApi } from '../config/constants';
+import { API } from '../config/constants';
 
 export default function Home() {
 
@@ -8,7 +8,7 @@ export default function Home() {
 
     useEffect(() => {
         async function fetchData() {
-            const response = await fetch(localDevApi + '/api/greetings');
+            const response = await fetch(API + '/api/greetings');
             const data = await response.json();
             setGreeting(data.data);
         }
@@ -19,7 +19,7 @@ export default function Home() {
         <div>
             <h1>Homepage</h1>
 
-            <p>Backend response ==> {greeting !== "" ? greeting : " - "}</p>
+            <p>{"Backend Response ---> "}{greeting !== "" ? greeting : " - "}</p>
         </div>
     )
 }

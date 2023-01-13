@@ -3,7 +3,7 @@ const pg = require("pg");
 const cors = require('cors');
 
 const app = express();
-const port = 3030;
+const port = process.env.PORT;
 
 // Middlewares
 app.use(express.json()); // for parsing application/json
