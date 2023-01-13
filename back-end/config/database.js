@@ -1,13 +1,15 @@
 const { Client } = require('pg');
 const initDB = require("./databaseStructureCreation");
 
-const dbClient = new Client({
+const connectionCredentials = {
     user: process.env.POSTGRES_USER,
     host: process.env.DATABASE_HOST,
     database: process.env.POSTGRES_DB,
     password: process.env.POSTGRES_PASSWORD,
     port: 5432,
-});
+};
+
+const dbClient = new Client({...connectionCredentials});
 
 dbClient.connect((err) => {
     if (err) {

@@ -1,5 +1,5 @@
-const localDevApi = "http://localhost:3030";
+const API = "http://localhost:" + process.env.REACT_APP_API_PORT;
 
 export {
-    localDevApi,
+    API,
 }
